@@ -1,8 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
+import axios from 'axios';
 
-Vue.config.productionTip = false
+import router from './router'
+import store from './store'
+
+axios.defaults.baseURL = 'https://vue-axios-f48ab.firebaseio.com';
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  router,
+  store,
+  render: h => h(App)
+})
